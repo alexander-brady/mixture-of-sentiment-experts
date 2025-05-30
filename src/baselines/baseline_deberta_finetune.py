@@ -128,6 +128,8 @@ def train_and_predict(model_size='base'):
 
     # Train
     trainer.train()
+    model_dir = f"models/deberta-v3-{model_size}"
+    trainer.save_model(model_dir)
 
     # Predict on test
     preds = trainer.predict(ds['test']).predictions
