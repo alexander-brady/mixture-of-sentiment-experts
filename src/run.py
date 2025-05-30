@@ -18,7 +18,11 @@ def run_moe():
     model = MoEClassifier(**config['moe_params']).to(device)
     tokenizer = AutoTokenizer.from_pretrained(config['moe_params']['experts'][0], use_fast=False)
     
-    label_map = config.get('label_map', None)
+    label_map = {
+    "negative":0,
+    "neutral":1,
+    "positive":2,
+    }
     reverse_label_map = {v: k for k, v in label_map.items()} if label_map else None
     
     train_loader, val_loader, test_loader = load_dataloaders(
