@@ -16,8 +16,8 @@ from transformers import (
 
 # ------------ Config ------------
 SEED = 42
-TRAIN_CSV = '/home/ubuntu/cil/data/training.csv'
-TEST_CSV = '/home/ubuntu/cil/data/test.csv'
+TRAIN_CSV = 'data/training.csv'
+TEST_CSV = 'test.csv'
 LABEL2ID = {'negative': 0, 'neutral': 1, 'positive': 2}
 ID2LABEL = {v: k for k, v in LABEL2ID.items()}
 # --------------------------------
