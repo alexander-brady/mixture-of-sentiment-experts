@@ -26,7 +26,7 @@ def train(
     '''
     model.to(device)
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
+    optimizer = optim.AdamW(model.parameters(), lr=float(learning_rate))
 
     for epoch in range(num_epochs):
         model.train()
