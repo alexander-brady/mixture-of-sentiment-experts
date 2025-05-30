@@ -64,10 +64,10 @@ def train_and_predict(model_size='base'):
 
     if model_size == 'large':
         checkpoint = 'microsoft/deberta-v3-large'
-        out_csv = 'prediction_deberta_large.csv'
+        out_csv = 'data/predictions/prediction_deberta_large.csv'
     else:
         checkpoint = 'microsoft/deberta-v3-base'
-        out_csv = 'prediction_deberta_base.csv'
+        out_csv = 'data/predictions/prediction_deberta_base.csv'
 
     # Load data
     df = pd.read_csv(TRAIN_CSV)

@@ -162,4 +162,4 @@ def run_distil_bert():
 
     # Save to CSV
     submission_df = test_df[['id', 'predicted_label']]
-    submission_df.to_csv("data/predicitions/predicitons_distil_bert.csv", index=False)
+    submission_df.to_csv("data/predictions/predictions_distil_bert.csv", index=False)

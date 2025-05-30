@@ -5,7 +5,10 @@ from sklearn.metrics import classification_report
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import torch
+import os
 # print("CUDA available:", torch.cuda.is_available())
+
+os.makedirs('data/predictions', exist_ok=True)
 
 # Training data
 def run_sentence_transformer():
