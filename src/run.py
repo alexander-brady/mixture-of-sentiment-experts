@@ -6,6 +6,7 @@ from moe.trainer import train, predict
 from .utils import load_config, load_dataloaders
 from baselines.baseline_sentence_transformer import run_sentence_transformer
 from baselines.baseline_distil_bert import run_distil_bert
+from baselines.baseline_deberta_finetune import train_and_predict
 
 
 def run_moe():
@@ -31,6 +32,14 @@ def run_moe():
         os.mkdir(config['model_save_path'], exist_ok=True)
         model.save_pretrained(config['model_save_path'])
         print(f"Model saved to {config['model_save_path']}")
+
+
+def run_deberta_v3(size):
+    if size not in ("base", "large"):
+        raise ValueError(f"Invalid model size: {size}. Must be 'base' or 'large'.")
+    train_and_predict(size)
+
+    
     
 
 def parse_args():
@@ -54,6 +63,10 @@ def main():
         run_sentence_transformer()
     elif args.model == "distil-bert":
         run_distil_bert()
+    elif args.model == "deberta-v3-base:
+        run_deberta_v3("base")
+    elif args.model == "deberta-v3-large:
+        run_deberta_v3("large")
     else:
         raise ValueError(f"Unknown model: {args.model}")
 
