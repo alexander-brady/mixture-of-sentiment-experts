@@ -44,6 +44,8 @@ def load_dataloaders(
 
     def cast_label_fn(batch):
         batch["label"] = [label_map[label] for label in batch["label"]]
+        return batch
+
 
     dataset = load_dataset('csv', data_files={
         'train': train_set,
