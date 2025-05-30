@@ -2,7 +2,7 @@
 
 > Alexander Brady, Adam Suma, Cedric Girardin, Diego Calasso
 
-This repository contains the source code for the team "The Sentimentalist"'s project on sentiment classification using a Mixture-of-Experts (MoE) model for the course Computational Intelligence Lab (2025).
+This repository contains the source code for the team _The Sentimentalist_'s project on sentiment classification using a Mixture-of-Experts (MoE) model for the course Computational Intelligence Lab (2025).
 
 ## Setup
 
