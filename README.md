@@ -32,6 +32,8 @@ The currently available model baselines are:
 - **moe**: Mixture-of-Experts
 - **deberta-v3-base**: finetuned microsoft/deberta-v3-base
 - **deberta-v3-large**: finetuned microsoft/deberta-v3-large
+- **sentence-transformer**: all-MiniLM-L6-v2 embeddings + Logistic Regression
+- **distil-bert**: Finetuned distilbert-base-uncased
 
 ## Notebooks
 - `data_analysis.ipynb` Analyzes the dataset and applies topic modeling on it.
