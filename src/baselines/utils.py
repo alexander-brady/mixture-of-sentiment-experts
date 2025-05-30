@@ -11,7 +11,7 @@ def load_config() -> dict:
     Returns:
         dict: Configuration parameters as a dictionary.
     """
-    with open('../config.yaml', 'r') as f:
+    with open('./config.yaml', 'r') as f:
         config = yaml.safe_load(f)
         
     return config
