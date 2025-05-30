@@ -4,6 +4,8 @@ from transformers import AutoTokenizer
 from moe.moe_classifier import MoEClassifier
 from moe.trainer import train, predict
 from .utils import load_config, load_dataloaders
+from baselines.baseline_sentence_transformer import run_sentence_transformer
+from baselines.baseline_distil_bert import run_distil_bert
 
 
 def run_moe():
@@ -48,6 +50,10 @@ def main():
     
     if args.model == "moe":
         run_moe()
+    if args.model == "sentence-transformer":
+        run_sentence_transformer()
+    elif args.model == "distil-bert":
+        run_distil_bert()
     else:
         raise ValueError(f"Unknown model: {args.model}")
 
