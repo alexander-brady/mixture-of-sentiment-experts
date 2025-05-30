@@ -63,9 +63,9 @@ def main():
         run_sentence_transformer()
     elif args.model == "distil-bert":
         run_distil_bert()
-    elif args.model == "deberta-v3-base:
+    elif args.model == "deberta-v3-base":
         run_deberta_v3("base")
-    elif args.model == "deberta-v3-large:
+    elif args.model == "deberta-v3-large":
         run_deberta_v3("large")
     else:
         raise ValueError(f"Unknown model: {args.model}")
