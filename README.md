@@ -36,4 +36,4 @@ The currently available model baselines are:
 - **distil-bert**: Finetuned distilbert-base-uncased
 
 ## Notebooks
-- `data_analysis.ipynb` Analyzes the dataset and applies topic modeling on it.
+- `data_analysis.ipynb` Analyzes the dataset and topic modeling on it.

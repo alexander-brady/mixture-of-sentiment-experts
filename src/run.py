@@ -4,9 +4,9 @@ from transformers import AutoTokenizer
 from moe.moe_classifier import MoEClassifier
 from moe.trainer import train, predict
 from baselines.utils import load_config, load_dataloaders
-from baselines.baseline_sentence_transformer import run_sentence_transformer
-from baselines.baseline_distil_bert import run_distil_bert
-from baselines.baseline_deberta_finetune import train_and_predict
+from baselines.sbert_classification import run_sentence_transformer
+from baselines.distilbert import run_distil_bert
+from baselines.deberta import train_and_predict
 
 
 def run_moe():
@@ -42,8 +42,6 @@ def run_deberta_v3(size):
     if size not in ("base", "large"):
         raise ValueError(f"Invalid model size: {size}. Must be 'base' or 'large'.")
     train_and_predict(size)
-
-    
     
 
 def parse_args():

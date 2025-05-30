@@ -6,7 +6,6 @@ from tqdm import tqdm
 import torch.nn.functional as F
 
 
-# set to device
 def run_distil_bert():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -27,7 +26,6 @@ def run_distil_bert():
         )
         return encodings['input_ids'], encodings['attention_mask']
 
-    # Training function (now uses the passed progress_bar)
     def train_epoch(model, data_loader, optimizer, device, epoch, total_epochs, progress_bar):
         model.train()
         total_loss = 0

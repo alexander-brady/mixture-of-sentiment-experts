@@ -1,26 +1,19 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
 from sentence_transformers import SentenceTransformer
-import numpy as np
-import torch
 import os
-# print("CUDA available:", torch.cuda.is_available())
 
-os.makedirs('data/predictions', exist_ok=True)
 
 # Training data
 def run_sentence_transformer():
+    os.makedirs('data/predictions', exist_ok=True)
     trainDF = pd.read_csv('data/training.csv')
     trainDF.columns = ['id', 'text', 'label']
 
     X_train, y_train = (trainDF['text'], trainDF['label'])
 
-    # Load pre-trained SentenceTransformer model
     model = SentenceTransformer("all-MiniLM-L6-v2")
 
-    # print("Encoding training data...")
     X_train_embeds = model.encode(X_train.tolist(), show_progress_bar=True, convert_to_numpy=True)
 
     # Train a logistic regression classifier
@@ -33,7 +26,6 @@ def run_sentence_transformer():
     clf.fit(X_train_embeds, y_train)
 
     # Evaluate the model
-    # print("Evaluating the model...")
     testDF = pd.read_csv('data/test.csv')
     testDF.columns = ['id', 'text']
 
