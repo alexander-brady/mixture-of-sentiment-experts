@@ -30,7 +30,8 @@ This will create a temporary directory for the SLURM job, create an environment,
 
 The currently available model baselines are:
 - **moe**: Mixture-of-Experts
-- 
+- **deberta-v3-base**: finetuned microsoft/deberta-v3-base
+- **deberta-v3-large**: finetuned microsoft/deberta-v3-large
 
 ## Notebooks
 - `data_analysis.ipynb` Analyzes the dataset and applies topic modeling on it.
