@@ -16,8 +16,12 @@ from transformers import (
 
 # ------------ Config ------------
 SEED = 42
-TRAIN_CSV = 'data/training.csv'
-TEST_CSV = 'data/test.csv'
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TRAIN_CSV = os.path.join(BASE_DIR, 'data', 'training.csv')
+TEST_CSV = os.path.join(BASE_DIR, 'data', 'test.csv')
+
 LABEL2ID = {'negative': 0, 'neutral': 1, 'positive': 2}
 ID2LABEL = {v: k for k, v in LABEL2ID.items()}
 # --------------------------------
