@@ -1,0 +1,22 @@
+moe_params:
+  experts:
+    - microsoft/deberta-v3-large
+    - microsoft/deberta-v3-large
+
+dataloaders:
+  validation_split: 0
+  batch_size: 16
+  max_length: 384
+  train_set: data/train.csv
+  test_set: data/test.csv
+
+train:
+  num_epochs: 3
+  learning_rate: 1e-5
+
+label_map:
+  0: "negative"
+  1: "neutral"
+  2: "positive"
+
+model_save_path: "model/checkpoint.pt"
