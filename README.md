@@ -2,7 +2,7 @@
 
 > Alexander Brady, Adam Suma, Cedric Girardin, Diego Calasso
 
-This repository contains the source code for the Computational Intelligence Lab's (CIL) 2025 course project on sentiment classification using a Mixture-of-Experts (MoE) model. The project is based on the [ETH Zurich CIL Text Classification 2025 competition](https://www.kaggle.com/competitions/ethz-cil-text-classification-2025).
+This repository contains the source code for the team _The Sentimentalist_'s project on sentiment classification using a Mixture-of-Experts (MoE) model for the course Computational Intelligence Lab (2025).
 
 ## Setup
 
@@ -25,3 +25,11 @@ Optionally, you can run the training script using SLURM for distributed training
 sbatch eval.sh <model_name>
 ```
 This will create a temporary directory for the SLURM job, create an environment, and run the training script with the specified model type.
+
+**Model Types**
+
+The currently available model baselines are:
+- **moe**: Mixture-of-Experts
+- 
+
+## Notebooks
